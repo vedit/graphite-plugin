@@ -57,27 +57,27 @@ public class GraphiteConfiguration extends ReloadingPropertiesReader {
     }
 
     public boolean isBatchMode() {
-        return Boolean.parseBoolean(properties.getProperty("batchMode"));
+        return Boolean.parseBoolean(System.getenv("HIVEMQ_METRICS_BATCH_MODE"));
     }
 
     public String getHost() {
-        return properties.getProperty("host");
+        return System.getenv("HOST");
     }
 
     public int getPort() {
-        return Integer.parseInt(properties.getProperty("port"));
+        return Integer.parseInt(System.getenv("HIVEMQ_METRICS_PORT"));
     }
 
     public int getBatchSize() {
-        return Integer.parseInt(properties.getProperty("batchSize"));
+        return Integer.parseInt(System.getenv("HIVEMQ_METRICS_BATCH_SIZE"));
     }
 
     public int getReportingInterval() {
-        return Integer.parseInt(properties.getProperty("reportingInterval"));
+        return Integer.parseInt(System.getenv("HIVEMQ_METRICS_REPORTING_INTERVAL"));
     }
 
     public String getPrefix() {
-        return properties.getProperty("prefix");
+        return System.getenv("HIVEMQ_METRICS_PREFIX");
     }
 
     @Override
